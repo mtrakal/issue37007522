@@ -10,9 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar.setTitle(R.string.title) // doesn't work when move under setSupportActionBar
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) // doesn't work when move before setSupportActionBar
         toolbar.setNavigationOnClickListener({ finish() }) // doesn't work when move before setSupportActionBar
+        setSupportActionBar(toolbar)
+        toolbar.setTitle(R.string.title) // doesn't work when move under setSupportActionBar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // doesn't work when move before setSupportActionBar, but expected, because supportActionBar == null
     }
 }
